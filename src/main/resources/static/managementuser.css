@@ -1,0 +1,163 @@
+/* Kelas khusus untuk memperluas modal */
+.modal-lg {
+    max-width: 80% !important;
+}
+
+/* Sisanya adalah CSS yang ada */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    background-color: rgba(8, 167, 139, 1);
+}
+
+.navbar-brand img {
+    width: 50px;
+}
+
+.nav-link {
+    color: white !important;
+    padding: 10px 15px;
+}
+
+.dropdown-item {
+    color: black;
+}
+
+.dropdown-menu {
+    background-color: white;
+}
+
+.user-dropdown .user-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 50px;
+    color: black;
+}
+
+.user-dropdown .user-container i {
+    margin-right: 5px;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.user-dropdown .user-container span {
+    font-weight: bold;
+    color: black;
+}
+
+.container {
+    padding: 20px;
+}
+
+.search-container {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search-container label {
+    margin-right: 0px;
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.table-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Tambahkan margin untuk memisahkan tabel */
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th, .table td {
+    padding: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table th {
+    background-color: rgba(8, 167, 139, 0.1);
+    border-bottom: 1px solid #ddd;
+}
+
+.table td {
+    border-bottom: 1px solid #ddd;
+}
+
+.table img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.operations {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.operations i {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #000;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination .page-item .page-link {
+    color: #0062cc;
+    padding: 8px 16px;
+    margin: 0 4px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.pagination .page-item .page-link:hover {
+    background-color: #0062cc;
+    color: white;
+    border-color: #0062cc;
+}
+/* Modal konfirmasi hapus */
+.modal-body.text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-body.text-center i {
+    margin-bottom: 15px;
+}
+
+.modal-footer.justify-content-center {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.modal-footer button {
+    width: 100px;
+}

@@ -1,0 +1,224 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    background-color: rgba(8, 167, 139, 1);
+}
+
+.navbar-brand img {
+    width: 50px;
+}
+
+.nav-link {
+    color: white !important;
+    padding: 10px 15px;
+}
+
+.dropdown-item {
+    color: black;
+}
+
+.dropdown-menu {
+    background-color: white;
+}
+
+.profile-photo {
+    width: 30px;
+    height: 30px;
+    margin-left: 2rem;
+}
+
+.user-dropdown .user-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 50px;
+    color: black;
+}
+
+.user-dropdown .user-container i {
+    margin-right: 5px;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.user-dropdown .user-container span {
+    font-weight: bold;
+    color: black;
+}
+
+
+.hero-section {
+    position: relative;
+    background-image: url('../images/tugu-sunset.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero-text {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 80%;
+    animation: slideInFromBottom 1s ease-out;
+}
+
+.main-content {
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.info-terkini {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.info-terkini .card {
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.info-terkini .card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.info-terkini .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.info-terkini .card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.info-terkini .card-body {
+    padding: 1.5rem;
+    background-color: #fff;
+}
+
+.info-terkini .card-body h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #06207f;
+}
+
+.info-terkini .card-body p {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.btn {
+    color: white;
+}
+
+.navbar .btn-icon {
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+}
+
+.img-fluid {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    margin-left: 9rem;
+    width: 90%;
+}
+
+.konten-utama {
+    background-color: rgba(87, 92, 91, 0.5);
+}
+
+.card-main {
+    color: white;
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: large;
+    color: white;
+}
+
+.user-dropdown .user-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 50px;
+    color: black;
+}
+
+.user-dropdown .user-container i {
+    margin-right: 5px;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.user-dropdown .user-container span {
+    font-weight: bold;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .info-terkini .card {
+        min-width: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

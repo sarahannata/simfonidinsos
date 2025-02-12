@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Form Pendaftaran</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="pendaftaran.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="../images/logo_kota.png" alt="Logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item pt-1">
+                            <a class="nav-link active" aria-current="page" href="beranda.html">Beranda</a>
+                        </li>
+                        <li class="nav-item pt-1">
+                            <a class="nav-link" href="managementuser.html">Management</a>
+                        </li>
+                        <li class="nav-item pt-1">
+                            <a class="nav-link" href="history.html">History</a>
+                        </li>
+                        <li class="nav-item pt-1">
+                            <a class="nav-link" href="pendaftaran.html">Pendaftaran</a>
+                        </li>
+                        <li class="nav-item dropdown pt-1 user-dropdown">
+                            <a class="nav-link dropdown-toggle user-container" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i>
+                                <span id="usernameDisplay">Username</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li class="dropdown-header">Profile</li>
+                                <li><a class="dropdown-item" href="#" onclick="logout()"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main class="container vh-100 d-flex justify-content-center align-items-center">
+            <div class="card p-4 shadow-sm" style="width: 100%; max-width: 700px;">
+                <div class="text-center mb-4">
+                    <img src="../images/logo_kota.png" alt="Logo" class="logo-pendaftaran mb-3" style="width: 100px;">
+                    <h2>Pendaftaran Akun LKS</h2>
+                </div>
+                <form id="registrationForm">
+                    <div class="form-group mb-3">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="confirmPassword">Konfirmasi Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Konfirmasi Password" required>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-block" onclick="showConfirmationModal()">Tambah Akun</button>
+                    <p id="message" class="mt-3 text-center"></p>
+                </form>
+            </div>
+        </main>
+
+        <!-- Modal Konfirmasi -->
+        <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+<!--                        <h5 class="modal-title" id="confirmationModalLabel">Konfirmasi Tambah Akun</h5>-->
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Apakah Anda yakin ingin menambahkan akun ini?</p>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="button" class="btn btn-primary" onclick="addUser()">Konfirmasi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="pendaftaran.js"></script>
+    </body>
+</html>

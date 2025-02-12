@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+          integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="profile.css">
+    <title>Profil LKS</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="../images/logo_kota.png" alt="Logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item pt-1">
+                    <a class="nav-link active" aria-current="page" href="beranda.html">Beranda</a>
+                </li>
+                <li class="nav-item dropdown pt-1">
+                    <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Profile
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                        <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                        <li><a id="formDataLksButton" class="dropdown-item" href="formdatalks.html">Form Data LKS</a></li>
+                        <li><a class="dropdown-item" href="uploadlaporan.html">Upload Laporan</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown pt-1 user-dropdown">
+                    <a class="nav-link dropdown-toggle user-container" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle"></i>
+                        <span id="usernameDisplay">Username</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        <li class="dropdown-header" id="profileLksName">Profile</li>
+                        <li><a class="dropdown-item" href="#" onclick="logout()"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card text-center p-5">
+                    <div class="card-body">
+                        <img id="profileImage" src="../images/image1.png" alt="Profil Picture" class="img img-thumbnail rounded-circle profile-image">
+                        <h2 id="profileLksTitle">Isi Form Terlebih Dahulu</h2>
+                        <p class="card-text text-muted">
+                            Lembaga Kesejahteraan Sosial Kota Yogyakarta
+                        </p>
+                        <button class="btn btn-success btn-sm" onclick="editProfile()">
+                            <i class="fa-solid fa-pencil me-1"></i> Ubah Profil
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div id="profileDisplay" class="shadow border rounded p-5 mb-5">
+                    <h2>Tentang</h2>
+                    <p><strong>Ketua LKS:</strong> <span id="profileLksOwner">Isi Form Terlebih Dahulu</span></p>
+                    <p><strong>Alamat LKS:</strong> <span id="profileLksAddress">Isi Form Terlebih Dahulu</span></p>
+                    <p><strong>Kontak Pengurus:</strong> <span id="profileLksContact">Isi Form Terlebih Dahulu</span></p>
+                </div>
+                <div id="additionalInfo" class="shadow border rounded p-5 mb-5">
+                    <h2>Informasi Lebih Lanjut</h2>
+                    <p><strong>Nomor & Tanggal Akte Notaris:</strong> <span id="profileLksNotaris">Isi Form Terlebih Dahulu</span></p>
+                    <p><strong>Nomor & Tanggal Tanda Daftar:</strong> <span id="profileLksRegistration">Isi Form Terlebih Dahulu</span></p>
+                    <p><strong>Akreditasi:</strong> <span id="profileLksAccreditation">Isi Form Terlebih Dahulu</span></p>
+                    <p><strong>Jenis LKS:</strong> <span id="profileLksType">Isi Form Terlebih Dahulu</span></p>
+                    <p><strong>Jenis Pelayanan:</strong> <span id="profileLksService">Isi Form Terlebih Dahulu</span></p>
+                </div>
+                <div id="editProfileForm" class="shadow border rounded p-5 mb-5" style="display: none;">
+                    <h2>Edit Profil LKS</h2>
+                    <form id="formEditProfile">
+                        <div class="form-group mb-3">
+                            <label for="editNamaLks">Nama LKS</label>
+                            <input type="text" id="editNamaLks" class="form-control">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="editPemilikLks">Pemilik LKS</label>
+                            <input type="text" id="editPemilikLks" class="form-control">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="editAlamatLks">Alamat LKS</label>
+                            <input type="text" id="editAlamatLks" class="form-control">
+                        </div>
+                        <div class="form-group">
+                        <label for="nomor-akte-notaris">Nomor Akte Notaris</label>
+                        <input type="text" id="nomor-akte-notaris" class="form-control" required>
+                        <div class="invalid-feedback">Nomor Akte Notaris wajib diisi.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal-akte-notaris">Tanggal Akte Notaris</label>
+                        <input type="date" id="tanggal-akte-notaris" class="form-control" required>
+                        <div class="invalid-feedback">Tanggal Akte Notaris wajib diisi.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="awal-tanda-daftar">Awal Tanggal Daftar</label>
+                        <input type="date" id="awal-tanda-daftar" class="form-control" required>
+                        <div class="invalid-feedback">Awal Tanggal Daftar wajib diisi.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="akhir-tanda-daftar">Akhir Tanggal Daftar</label>
+                        <input type="date" id="akhir-tanda-daftar" class="form-control" required>
+                        <div class="invalid-feedback">Akhir Tanggal Daftar wajib diisi.</div>
+                    </div>
+                        <div class="form-group mb-3">
+                            <label for="editKontakPengurus">Kontak Pengurus</label>
+                            <input type="text" id="editKontakPengurus" class="form-control">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="editAkreditasi">Akreditasi</label>
+                            <input type="text" id="editAkreditasi" class="form-control" oninput="this.value = this.value.toUpperCase()">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="editJenisLks">Jenis LKS</label>
+                            <select id="editJenisLks" class="form-control">
+                                <option value="LKS Kota">LKS Kota</option>
+                                <option value="LKS Provinsi">LKS Provinsi</option>
+                                <option value="LKS Nasional">LKS Nasional</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="editJenisPelayanan">Jenis Pelayanan</label>
+                            <select id="editJenisPelayanan" class="form-control">
+                                <option value="Anak">Anak</option>
+                                <option value="Disabilitas">Disabilitas</option>
+                                <option value="Lanjut-Usia">Lanjut Usia</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="editUploadFoto">Upload Foto</label>
+                            <input type="file" id="editUploadFoto" class="form-control" accept="image/*">
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="saveProfile()">Simpan</button>
+                        <button type="button" class="btn btn-secondary" onclick="cancelEdit()">Batal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="profile.js"></script>
+</body>
+</html>

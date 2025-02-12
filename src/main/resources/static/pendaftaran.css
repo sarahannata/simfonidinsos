@@ -1,0 +1,79 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: rgba(8, 167, 139, 1);
+}
+
+.navbar-brand img {
+    width: 50px;
+}
+
+.nav-link {
+    color: white !important;
+    padding: 10px 15px;
+}
+
+.dropdown-item {
+    color: black;
+}
+
+.dropdown-menu {
+    background-color: white;
+}
+
+.user-dropdown .user-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 50px;
+    color: black;
+}
+
+.user-dropdown .user-container i {
+    margin-right: 5px;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.user-dropdown .user-container span {
+    font-weight: bold;
+    color: black;
+}
+
+/* Main container styles */
+.container {
+    background-color: #f8f9fa;
+    border-radius: 15px;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-pendaftaran {
+    width: 80px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: rgba(8, 167, 139, 1);
+    font-weight: bold;
+}
+
+form .btn-primary {
+    background-color: rgba(8, 167, 139, 1);
+    border-color: rgba(8, 167, 139, 1);
+}
+
+form .btn-primary:hover {
+    background-color: rgba(6, 130, 108, 1);
+    border-color: rgba(6, 130, 108, 1);
+}

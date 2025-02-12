@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifikasi</title>
+    <style>
+        .notification-section {
+            width: 300px;
+            background-color: #E6F4F1;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .notification-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .notification-header h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .close-notification {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .notification-content {
+            margin-top: 10px;
+        }
+
+        .notification-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .notification-logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .notification-details {
+            flex: 1;
+        }
+
+        .notification-message {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        .notification-time {
+            font-size: 0.8em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="notification-section">
+        <div class="notification-header">
+            <h3>Notifikasi</h3>
+            <button class="close-notification">&times;</button>
+        </div>
+        <div class="notification-content">
+            <div class="notification-item">
+                <img src="path-to-logo.png" alt="Logo" class="notification-logo">
+                <div class="notification-details">
+                    <p class="notification-message">Hai [Panti Wreda "Hanna" Yogyakarta], izin operasional LKS Anda akan habis dalam satu bulan lagi. Mohon untuk memperpanjang izin operasional sebelum masa berlaku habis</p>
+                    <span class="notification-time">Jumat, 21 Juni 2024 - 16:54:30</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <img src="path-to-logo.png" alt="Logo" class="notification-logo">
+                <div class="notification-details">
+                    <p class="notification-message">Hai [Panti Wreda "Hanna" Yogyakarta], izin operasional LKS Anda akan habis dalam satu bulan lagi. Mohon untuk memperpanjang izin operasional sebelum masa berlaku habis</p>
+                    <span class="notification-time">Jumat, 21 Juni 2024 - 16:54:30</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

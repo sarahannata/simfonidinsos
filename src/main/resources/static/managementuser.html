@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Management User</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="managementuser.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="../images/logo_kota.png" alt="Logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item pt-1">
+                            <a class="nav-link active" aria-current="page" href="admin_beranda.html">Beranda</a>
+                        </li>
+                        <li class="nav-item pt-1">
+                            <a class="nav-link" href="managementuser.html">Management</a>
+                        </li>
+                        <li class="nav-item pt-1">
+                            <a class="nav-link" href="history.html">History</a>
+                        </li>
+                        <li class="nav-item pt-1">
+                            <a class="nav-link" href="pendaftaran.html">Pendaftaran</a>
+                        </li>
+                        <li class="nav-item dropdown pt-1 user-dropdown">
+                            <a class="nav-link dropdown-toggle user-container" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i>
+                                <span id="usernameDisplay">Username</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li class="dropdown-header" id="profileLksName">Profile</li>
+                                <li><a class="dropdown-item" href="#" onclick="logout()"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <!-- Tabel Data LKS -->
+            <div class="table-container">
+                <h2>Data Profile</h2>
+                <label for="search">Search Nama LKS</label>
+                <div class="search-container">
+                    <input type="text" id="search" placeholder="Search name" onkeyup="searchTable()">
+                </div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Logo</th>
+                            <th scope="col">Nama LKS</th>
+                            <th scope="col">Operations</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider" id="lksTableBody">
+                        <!-- Baris akan diisi oleh JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <!-- Tabel Data User -->
+            <div class="table-container">
+                <h2>Data User</h2>
+                <label for="searchUser">Search Username</label>
+                <div class="search-container">
+                    <input type="text" id="searchUser" placeholder="Search username" onkeyup="searchUserTable()">
+                </div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Operations</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider" id="userTableBody">
+                        <!-- Baris akan diisi oleh JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Modal untuk Edit LKS -->
+        <div class="modal fade" id="editLksModal" tabindex="-1" aria-labelledby="editLksModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editLksModalLabel">Edit LKS</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editLksForm">
+                            <input type="hidden" id="editLksId">
+                            <div class="mb-3">
+                                <label for="editNamaLks" class="form-label">Nama LKS</label>
+                                <input type="text" class="form-control" id="editNamaLks" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editPemilikLks" class="form-label">Pemilik LKS</label>
+                                <input type="text" class="form-control" id="editPemilikLks" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editAlamatLks" class="form-label">Alamat LKS</label>
+                                <input type="text" class="form-control" id="editAlamatLks" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editNomorAkteNotaris" class="form-label">Nomor Akte Notaris</label>
+                                <input type="text" class="form-control" id="editNomorAkteNotaris" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editTanggalAkteNotaris" class="form-label">Tanggal Akte Notaris</label>
+                                <input type="date" class="form-control" id="editTanggalAkteNotaris" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editKontakPengurus" class="form-label">Kontak Pengurus</label>
+                                <input type="text" class="form-control" id="editKontakPengurus" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editAkreditasi" class="form-label">Akreditasi</label>
+                                <input type="text" class="form-control" id="editAkreditasi" oninput="this.value = this.value.toUpperCase();" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editJenisLks" class="form-label">Jenis LKS</label>
+                                <select class="form-control" id="editJenisLks" required>
+                                    <option value="LKS Kota">LKS Kota</option>
+                                    <option value="LKS Provinsi">LKS Provinsi</option>
+                                    <option value="LKS Nasional">LKS Nasional</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editJenisPelayanan" class="form-label">Jenis Pelayanan</label>
+                                <select class="form-control" id="editJenisPelayanan" required>
+                                    <option value="Anak">Anak</option>
+                                    <option value="Disabilitas">Disabilitas</option>
+                                    <option value="Lanjut-Usia">Lanjut Usia</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editAwalTandaDaftar" class="form-label">Awal Tanda Daftar</label>
+                                <input type="date" class="form-control" id="editAwalTandaDaftar" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editAkhirTandaDaftar" class="form-label">Akhir Tanda Daftar</label>
+                                <input type="date" class="form-control" id="editAkhirTandaDaftar" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editUploadFoto" class="form-label">Upload Foto</label>
+                                <input type="file" class="form-control" id="editUploadFoto">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal untuk Edit User -->
+        <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editUserModalLabel">Edit User</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editUserForm">
+                            <input type="hidden" id="editUserId">
+                            <div class="mb-3">
+                                <label for="editUsername" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="editUsername">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="editPassword">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal untuk Konfirmasi Hapus -->
+        <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+<!--                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmDeleteModalLabel">Konfirmasi Hapus</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>-->
+                    <div class="modal-body text-center">
+                        <i class="bi bi-x-circle" style="font-size: 3rem; color: red;"></i>
+                        <p>Apakah Anda yakin ingin menghapus data ini?</p>
+                        <input type="hidden" id="deleteItemId">
+                        <input type="hidden" id="deleteItemType">
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="button" class="btn btn-danger" onclick="confirmDelete()">Hapus</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="managementuser.js"></script>
+    </body>
+</html>
