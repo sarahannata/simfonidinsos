@@ -27,13 +27,13 @@ As the **Frontend Developer**, my main tasks were:
 
 ## Preview (Frontend - LKS Role)
 **Login**
-<img width="500" alt="LoginLKS" src="https://github.com/user-attachments/assets/02602271-0e48-494b-94e9-ecc0a08b8ece" />
+<img width="2880" height="1912" alt="LoginLKS" src="https://github.com/user-attachments/assets/02602271-0e48-494b-94e9-ecc0a08b8ece" />
 
 **Beranda**
-<img width="500" alt="Beranda" src="https://github.com/user-attachments/assets/f0ec543e-de19-43d2-a2d0-cc22d5b67e0c" />
+<img width="2880" height="1912" alt="Beranda" src="https://github.com/user-attachments/assets/f0ec543e-de19-43d2-a2d0-cc22d5b67e0c" />
 
 **Form Data LKS**
-<img width="500" alt="FormLKS" src="https://github.com/user-attachments/assets/0dd71f8a-3064-4be5-b954-ad39296620b2" />
+<img width="2880" height="1912" alt="FormLKS" src="https://github.com/user-attachments/assets/0dd71f8a-3064-4be5-b954-ad39296620b2" />
 
 **Form Upload Laporan LKS**
 <img width="2880" height="1912" alt="UploadLaporan" src="https://github.com/user-attachments/assets/7e3fcf00-d0a0-4363-b07b-32b49b42ead9" />
